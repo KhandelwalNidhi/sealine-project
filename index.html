@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sealine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"  />
+</head>
+<body>
+    <header class="slider">
+        <nav class="navbar">
+            <div class="logo"><img src="./img/logo-inverse-208x46.png" alt="" ></div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                
+                <li><a href="#notes-heading">Notes</a></li>
+            </ul>
+            <a href="#book" class="book-now-btn" id="openFormBtn">Book Now</a>
+            <!-- book now form -->
+            <!-- Popup Overlay -->
+              <div class="popup-overlay" id="popupOverlay">
+                <div class="popup-box">
+                  <button class="btn-close" id="closePopup">&times;</button>
+                  <h2>Book Your Trip</h2>
+                  <form id="popupBookingForm">
+                    <div class="form-group">
+                      <label  class="lable" for="name">Full Name:</label>
+                      <input type="text" id="name" name="name" placeholder="Enter your full name" style="margin-left: 0;">
+                      <div class="error-message" id="nameError"></div>
+                    </div>
+              
+                    <div class="form-group">
+                      <label class="lable"for="email">Email Address:</label>
+                      <input type="email" id="email" name="email" placeholder="Enter your email address" >
+                      <div class="error-message" id="emailError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="lable" for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        <div class="error-message" id="phoneError"></div>
+                      </div>
+                    <div class="form-group">
+                      <label class="lable" for="destination">Destination:</label>
+                      <select id="destination" name="destination" style="padding-right: 20px;" >
+                        <option value="" >Select a destination</option>
+                        <option value="paris">Paris</option>
+                        <option value="maldives">Maldives</option>
+                        <option value="dubai">Dubai</option>
+                        <option value="bali">Bali</option>
+                      </select>
+                      <div class="error-message" id="destinationError"></div>
+                    </div>
+              
+                    <button type="submit" class="btn-submit">Submit</button>
+                  </form>
+                </div>
+              </div>
+              
+        </nav>
+       
+      
+        <div class="to-do-container">
+            <h1>PLACES</h1>
+            <input type="text" id="taskInput" placeholder="Add Your Dream Place...">
+            <button  id="addTaskBtn">Add </button>
+            <ul id="taskList"></ul>
+            
+        </div>
+    
+    </header> 
+    <div class="our-tour-text">
+       <span CLASS="main-text">Our Best Tours</span> 
+        <span class="overlay-text">~ Tours ~</span>
+        </div>
+    <section id="slider">
+        <input type="radio" name="slider" id="s1" checked>
+        <input type="radio" name="slider" id="s2">
+        <input type="radio" name="slider" id="s3">
+        <input type="radio" name="slider" id="s4">
+        <input type="radio" name="slider" id="s5">
+      
+        <label for="s1" id="slide1"><img src="./img/jaipur-tour-packages-1.webp" alt=""></label>
+        <label for="s2" id="slide2"><div class="slide-text">GANGTOK TOUR-PACKAGE </div><img src="./img/GANGTOK.jpg" alt=""></label>
+        <label for="s3" id="slide3"><div class="slide-text">NAINITAL TOUR-PACKAGE </div><img src="./img/NAINITAL.jpg" alt=""></label>
+        <label for="s4" id="slide4"><div class="slide-text">AGRA TOUR-PACKAGE </div><img src="./img/slider2-img-2.jpg" alt=""></label>
+        <label for="s5" id="slide5"><div class="slide-text">SIKKIM TOUR-PACKAGE </div><img src="./img/sikkim-tourist-attraction.jpg" alt=""></label>
+      </section>
+    <section>
+      <div class="btn">
+        <a href="#notes-heading"><button id="addBtn">
+            <i class="fas fa-plus"></i>
+            Add Note
+        </button>
+        </a>
+    </div>
+    <div id="notes-heading"><h2 >Stay Organized with Notes</h2> <i class="fa-regular fa-clipboard fa-lg clipboard"></i></div>
+    <div id="main">
+     </div>
+    </section>
+  <section>
+    <h2 class="slider3-heading"> Places You can visit in INDIA</h2>
+    <div class="container">
+      <div class="item"  onclick="openLightbox(0)">
+          <img src="./img/slider3-img1.jpg" alt="">
+      </div>
+      <div class="item"  onclick="openLightbox(1)">
+          <img src="./img/slider3-img2.jpg" alt="">
+      </div>
+      <div class="item"  onclick="openLightbox(2)">
+          <img src="./img/slider3-img3.jpg" alt="">
+      </div>
+      <div class="item"  onclick="openLightbox(3)">
+          <img src="./img/slider3-img4.jpg" alt="">
+      </div>
+      <div class="item"  onclick="openLightbox(4)">
+          <img src="./img/slider3-img5.jpg" alt="">
+      </div>
+      <div class="item"  onclick="openLightbox(5)">
+          <img src="./img/slider3-img6.jpg" alt="">
+      </div>
+      
+      <div class="item"  onclick="openLightbox(6)">
+          <img src="./img/slider3-img7.jpg" alt="">
+      </div>
+      <div class="item"  onclick="openLightbox(7)">
+        <img src="./img/slider3-img8.jpg" alt="">
+    </div>
+
+  </div>
+  
+  <div class ="arrow-container">
+      <div onclick="next()" class="myarrow">
+          <i class="fa-solid fa-arrow-right"></i>
+      </div>
+      <div onclick="prev()" class="myarrow">
+          <i class="fa-solid fa-arrow-left"></i>
+      </div>
+  </div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-image" src="" alt="Lightbox Image">
+    <button class="prev" onclick="lightboxPrev()">&#10094;</button>
+    <button class="next" onclick="lightboxNext()">&#10095;</button>
+</div>
+
+  </section>
+  
+    <div class="accordian-container">
+        <h1 class="faq-heading">Questions? We’ve Got Answers!</h1>
+        <div class="tab">
+            <span class="qus">What documents do I need to book a trip?
+            <button class="showbtn plus ">+</button>
+            <button class="showbtn mins" >-</button></span>
+            <p class="ans ">You usually need a valid passport (if traveling internationally), a government-issued ID (for domestic travel), and any required visas. Some trips may also require travel insurance.
+            </p>
+        </div>
+        <div class="tab">
+            <span class="qus">How do I book a tour with you?
+                <button class="showbtn plus " >+</button>
+            <button class="showbtn mins" >-</button>
+            </span>
+            
+            <p class="ans ">You can book a tour through our website, by calling our customer support, or visiting one of our offices. Online bookings are quick and secure.
+            </p>
+        </div>
+        <div class="tab">
+            <span class="qus">What payment methods do you accept?
+                <button class="showbtn plus " >+</button>
+            <button class="showbtn mins" >-</button>
+            </span>
+            
+            <p class="ans ">We accept credit/debit cards, bank transfers, digital wallets, and cash payments (at our office).
+            </p>
+        </div>
+        <div class="tab">
+            <span class="qus">Are flights included in your travel packages?
+                <button class="showbtn plus " >+</button>
+            <button class="showbtn mins" >-</button>
+            </span>
+            
+            <p class="ans ">Some packages include flights, while others do not. Please check the package details or contact us for clarification.
+            </p>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+  <div class="footer-container">
+      <p>&copy; 2024 Tour and Travels. All rights reserved.</p>
+      <ul class="social-links">
+          <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f fa-lg"></i></a></li>
+          <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter fa-lg"></i></a></li>
+          <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
+          <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
+      </ul>
+  </div>
+</footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
